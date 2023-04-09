@@ -1,15 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=David+Libre:wght@500&display=swap');
 
-@keyframes shadow {
-    0%, 100% {
-        transform: scale(0.5);
-    }
-
-    50% {
-        transform: scale(1);
-    }
-}
-
 .base-timer {
     position: relative;
     height: 200px;
