@@ -1,6 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=David+Libre:wght@500&display=swap');
+
+@keyframes shadow {
+    0%, 100% {
+        transform: scale(0.5);
+    }
+
+    50% {
+        transform: scale(1);
+    }
+}
+
+.base-timer {
+    position: relative;
+    height: 200px;
+    width: 200px;
+}
+
+.base-timer__circle {
+    fill: none;
+    stroke: none;
+}
+
+.base-timer__path-elapsed {
+    stroke-width: 7px;
+    stroke: #104d78;
+}
+
 .timer-container {
+    font-family: 'David Libre', serif;
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    top: 0;
     display: flex;
-    width: 25%;
-    height: 95%;
-    background-color: #5caae0;
+    align-items: center;
+    justify-content: center;
+    font-size: 70px;
 }
