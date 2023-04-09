@@ -1,0 +1,6 @@
+.timer-container {
+    display: flex;
+    width: 25%;
+    height: 95%;
+    background-color: #5caae0;
+}
