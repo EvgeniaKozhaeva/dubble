@@ -4,6 +4,7 @@ import cardStore from "../../store/cardStore";
 import scoreStore from "../../store/scoreStore";
 
 import {observer} from "mobx-react-lite"
+import {useEffect} from "react";
 
 interface CardProps {
     cardSide: "right" | "left"
@@ -11,6 +12,14 @@ interface CardProps {
 }
 
 export const CardCommon = observer(({ cardSide, card }: CardProps) => {
+
+    useEffect(() => {
+        setTimeout(() => {
+            cardStore.resetSelected();
+            cardStore.generateCards()
+        }, 800);
+    }, [scoreStore.count])
+
     return (
         <div className={`cards ${cardSide}-card`}>
 

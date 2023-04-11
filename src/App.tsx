@@ -14,8 +14,8 @@ const App = observer(() => {
             <Timer/>
         </div>
         <div className="cards-container">
-            <CardCommon cardSide={"right"} card={cardStore.getRightCardImage()}/>
-            <CardCommon cardSide={"left"} card={cardStore.getLeftCardImage()}/>
+            <CardCommon cardSide={"right"} card={cardStore.rightCard}/>
+            <CardCommon cardSide={"left"} card={cardStore.leftCard}/>
         </div>
     </div>
   );

@@ -8,30 +8,43 @@ import emoji_6 from "./emoji_6.png"
 import emoji_7 from "./emoji_7.png"
 import emoji_8 from "./emoji_8.png"
 import emoji_9 from "./emoji_9.png"
+import emoji_10 from "./emoji_10.png"
+import emoji_11 from "./emoji_11.png"
+import emoji_12 from "./emoji_12.png"
+import emoji_13 from "./emoji_13.png"
+import emoji_14 from "./emoji_14.png"
+import emoji_15 from "./emoji_15.png"
+import emoji_16 from "./emoji_16.png"
+import emoji_17 from "./emoji_17.png"
+import emoji_18 from "./emoji_18.png"
+import emoji_19 from "./emoji_19.png"
+
+const IMAGES = [
+    {id: 1, img: emoji_1},
+    {id: 2, img: emoji_2},
+    {id: 3, img: emoji_3},
+    {id: 4, img: emoji_4},
+    {id: 5, img: emoji_5},
+    {id: 6, img: emoji_6},
+    {id: 7, img: emoji_7},
+    {id: 8, img: emoji_8},
+    {id: 9, img: emoji_9},
+    {id: 10, img: emoji_10},
+    {id: 11, img: emoji_11},
+    {id: 12, img: emoji_12},
+    {id: 13, img: emoji_13},
+    {id: 14, img: emoji_14},
+    {id: 15, img: emoji_15},
+    {id: 16, img: emoji_16},
+    {id: 17, img: emoji_17},
+    {id: 18, img: emoji_18},
+    {id: 19, img: emoji_19},
+];
 
 class CardsStore {
-    rightCard = [
-        {id: 1, img: emoji_1},
-        {id: 2, img: emoji_2},
-        {id: 3, img: emoji_3},
-        {id: 4, img: emoji_4},
-        {id: 5, img: emoji_5},
-        {id: 6, img: emoji_6},
-        {id: 7, img: emoji_7},
-        {id: 8, img: emoji_8},
-        {id: 9, img: emoji_9},
-    ].sort(() => Math.random() - 0.5);
-    leftCard = [
-        {id: 1, img: emoji_1},
-        {id: 2, img: emoji_2},
-        {id: 3, img: emoji_3},
-        {id: 4, img: emoji_4},
-        {id: 5, img: emoji_5},
-        {id: 6, img: emoji_6},
-        {id: 7, img: emoji_7},
-        {id: 8, img: emoji_8},
-        {id: 9, img: emoji_9},
-    ].sort(() => Math.random() - 0.5);
+    // rightCard = [].sort(() => Math.random() - 0.5);
+    rightCard: { id: number; img: any }[] = [];
+    leftCard: { id: number; img: any }[] = [];
     selectedImages: Record<string, undefined | number> = {
         left: undefined,
         right: undefined,
@@ -41,11 +54,17 @@ class CardsStore {
         makeAutoObservable(this)
     }
 
-    getRightCardImage() {
-        return this.rightCard
-    }
-    getLeftCardImage() {
-        return this.leftCard
+    generateCards() {
+        const images = [...IMAGES].sort(() => Math.random() - 0.5);
+        const uniqImage = images.pop() as {id: number, img: any};
+        this.rightCard = images.slice(1, 9);
+        this.leftCard = images.slice(10, 19);
+        this.rightCard.push(uniqImage);
+        this.leftCard.push(uniqImage);
+        this.leftCard.sort(() => Math.random() - 0.5)
+        this.rightCard.sort(() => Math.random() - 0.5)
+        console.log("RIGHT", this.rightCard);
+        console.log("LEFT", this.leftCard);
     }
 
     setSelected(cardSide: "left"| "right", id: number) {
@@ -53,6 +72,11 @@ class CardsStore {
             this.selectedImages[cardSide] = undefined
         } else {this.selectedImages[cardSide] = id}
 
+    }
+
+    resetSelected() {
+        this.selectedImages.right = undefined;
+        this.selectedImages.left = undefined;
     }
 
     compareImages() {
