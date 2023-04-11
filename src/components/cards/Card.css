@@ -1,6 +1,7 @@
 .cards {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
     height: 90%;
     width: 45%;
     margin: auto;
@@ -9,17 +10,15 @@
     background-color: #5caae0;
 }
 
-.memory-icons-line {
-    display: flex;
-    flex-grow: 1;
-    background-color: #309ce6;
-}
-
 .memory-icon {
     display: flex;
     justify-content: center;
     margin: 10px;
     flex-grow: 1;
+}
+
+.memory-icon-active {
+    border: 2px solid red;
 }
 
 .image {

@@ -1,9 +1,15 @@
 import "./Card.css"
-import image from "./Smile1.png"
 
-export const CardIcon = () => {
+
+interface CardIconProps {
+    image: any;
+    status: {}
+    setStatus: () => void
+}
+
+export const CardIcon = ({ image, status, setStatus }: CardIconProps) => {
     return (
-        <span className="memory-icon">
+        <span className={`memory-icon-${status}`} onClick={setStatus} >
             <img className="image" src={image} alt="alt"/>
         </span>
     )
