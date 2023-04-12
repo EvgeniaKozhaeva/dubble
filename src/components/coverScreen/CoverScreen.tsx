@@ -22,6 +22,7 @@ export const FinishScreen = observer(() => {
     const [isVisible, setIsVisible] = useState(false);
     const onClick = () => {
         setIsVisible(false);
+        timerStore.resetTimer()
         timerStore.startTimer()
         scoreStore.resetCount()
     }

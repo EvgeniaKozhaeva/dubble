@@ -1,7 +1,9 @@
 import {makeAutoObservable} from "mobx";
 
+const SECONDS = 60;
+
 class TimerStore {
-    counter = 10
+    counter = SECONDS
     isTimerStarted = false
 
     constructor() {
@@ -14,6 +16,10 @@ class TimerStore {
 
     startTimer() {
         this.isTimerStarted = true
+    }
+
+    resetTimer() {
+        this.counter = SECONDS
     }
 }
 
