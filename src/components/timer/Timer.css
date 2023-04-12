@@ -17,7 +17,7 @@
 }
 
 .timer-container {
-    font-family: 'David Libre', serif;
+    font-family: Inter,sans-serif;
     position: absolute;
     width: 200px;
     height: 200px;

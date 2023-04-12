@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=David+Libre:wght@500&display=swap');
 
 .score-container {
-    font-family: 'David Libre', serif;
+    font-family: Inter,sans-serif;
     display: flex;
     width: 40%;
     height: 95%;

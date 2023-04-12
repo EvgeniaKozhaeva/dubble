@@ -13,6 +13,10 @@ class ScoreStore {
             ++this.count
         }
     }
+
+    resetCount() {
+        this.count = 0
+    }
 }
 
 export default new ScoreStore();
