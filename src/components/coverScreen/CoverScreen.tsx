@@ -3,6 +3,7 @@ import timerStore from "../../store/timerStore";
 import scoreStore from "../../store/scoreStore";
 import { observer } from "mobx-react-lite"
 import {useEffect, useState} from "react";
+import cardStore from "../../store/cardStore";
 
 
 export const CoverScreen = observer(() => {
@@ -22,6 +23,7 @@ export const FinishScreen = observer(() => {
     const [isVisible, setIsVisible] = useState(false);
     const onClick = () => {
         setIsVisible(false);
+        cardStore.resetSelected()
         timerStore.resetTimer()
         timerStore.startTimer()
         scoreStore.resetCount()

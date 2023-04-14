@@ -41,10 +41,14 @@ const IMAGES = [
     {id: 19, img: emoji_19},
 ];
 
+type Card = {
+    id: number,
+    img: any
+}
+
 class CardsStore {
-    // rightCard = [].sort(() => Math.random() - 0.5);
-    rightCard: { id: number; img: any }[] = [];
-    leftCard: { id: number; img: any }[] = [];
+    rightCard: Card[] = [];
+    leftCard: Card[] = [];
     selectedImages: Record<string, undefined | number> = {
         left: undefined,
         right: undefined,
@@ -63,8 +67,6 @@ class CardsStore {
         this.leftCard.push(uniqImage);
         this.leftCard.sort(() => Math.random() - 0.5)
         this.rightCard.sort(() => Math.random() - 0.5)
-        console.log("RIGHT", this.rightCard);
-        console.log("LEFT", this.leftCard);
     }
 
     setSelected(cardSide: "left"| "right", id: number) {
@@ -82,7 +84,7 @@ class CardsStore {
     compareImages() {
         if (this.selectedImages.left && this.selectedImages.right) {
             return this.selectedImages.left === this.selectedImages.right
-        } else return false
+        }
     }
 
 

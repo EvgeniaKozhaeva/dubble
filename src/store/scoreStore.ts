@@ -8,7 +8,7 @@ class ScoreStore {
         makeAutoObservable(this);
     }
 
-    incrementCount(isResultCorrect: boolean): void {
+    incrementCount(isResultCorrect: boolean | undefined): void {
         if (isResultCorrect) {
             ++this.count
         }

@@ -31,7 +31,9 @@ export const CardCommon = observer(({ cardSide, card }: CardProps) => {
                     setStatus={() => {
                         cardStore.setSelected(cardSide, item.id)
                         scoreStore.incrementCount(cardStore.compareImages())
-                    }}/>
+                    }}
+                    isMatched={cardStore.compareImages()}
+                />
             )) }
         </div>
 )
