@@ -12,12 +12,11 @@ interface CardProps {
 }
 
 export const CardCommon = observer(({ cardSide, card }: CardProps) => {
-
     useEffect(() => {
         setTimeout(() => {
             cardStore.resetSelected();
             cardStore.generateCards()
-        }, 800);
+        }, 500);
     }, [scoreStore.count])
 
     return (

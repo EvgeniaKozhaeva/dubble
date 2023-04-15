@@ -1,27 +1,37 @@
 .app-container {
+  height: 100vh;
+  width: 100vw;
+  background-color: #d5dfe6;
+}
+
+.game-container {
   display: flex;
   flex-direction: column;
   height: 100vh;
   width: 100vw;
-  padding: 0;
-  margin: 0;
-  background-color: #d5dfe6;
 }
 
 .up-footer-container {
   display: flex;
   justify-content: space-between;
   margin-top: 0.5%;
-  width: 100%;
   height: 25%;
   background-color: #fff;
 }
 
 .cards-container {
   display: flex;
-  margin: auto;
-  width: 75%;
-  height: 75%;
-  /*background-color: #9dc6e3;*/
+  width: 100%;
+  height: 100%;
+  background-color: #3A38AE;
+}
+
+@media only screen and (max-width: 600px) {
+  .cards-container {
+    flex-direction: column;
+  }
+  .up-footer-container {
+    height: 12%;
+  }
 }
 

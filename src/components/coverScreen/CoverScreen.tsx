@@ -1,4 +1,5 @@
 import "./CoverScreen.css"
+import "./NewGameButton.css"
 import timerStore from "../../store/timerStore";
 import scoreStore from "../../store/scoreStore";
 import { observer } from "mobx-react-lite"
