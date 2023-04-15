@@ -28,7 +28,12 @@ export const FinishScreen = observer(() => {
         timerStore.startTimer()
         scoreStore.resetCount()
     }
-    useEffect(() => {timerStore.counter === 0 && setIsVisible(true)}, [timerStore.counter])
+    useEffect(() => {
+        if (timerStore.counter === 0) {
+            setIsVisible(true);
+            cardStore.resetSelected()
+        }
+    }, [timerStore.counter])
     return (
         <div className={`cover-screen visible-${isVisible}`} > {winMessage}
             <button className="new-game-button" onClick={() => onClick()}> New Game </button>
