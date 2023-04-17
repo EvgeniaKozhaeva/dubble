@@ -60,23 +60,23 @@
     }
 }
 
-@media only screen and (min-width: 350px) {
+@media only screen and (max-width: 830px) {
     .cards {
-        height: 250px;
-        width: 250px;
+        height: 400px;
+        width: 400px;
     }
 }
 
-@media only screen and (min-width: 380px) {
+@media only screen and (max-width: 420px) {
     .cards {
         height: 330px;
         width: 330px;
     }
 }
 
-@media only screen and (min-width: 760px) {
+@media only screen and (max-width: 380px) {
     .cards {
-        height: 400px;
-        width: 400px;
+        height: 250px;
+        width: 250px;
     }
 }

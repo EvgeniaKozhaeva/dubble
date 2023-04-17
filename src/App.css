@@ -32,7 +32,16 @@
   background-color: #3A38AE;
 }
 
-@media only screen and (min-width: 350px) {
+@media only screen and (max-width: 830px){
+  .cards-container {
+    flex-direction: column;
+  }
+  .header-container {
+    height: 18%;
+  }
+}
+
+@media only screen and (max-width: 420px) {
   .cards-container {
     flex-direction: column;
   }
@@ -41,7 +50,7 @@
   }
 }
 
-@media only screen and (min-width: 380px) {
+@media only screen and (max-width: 380px) {
   .cards-container {
     flex-direction: column;
   }
@@ -49,11 +58,3 @@
     height: 12%;
   }
 }
-
-@media only screen and (min-width: 760px) {
-  .cards-container {
-    flex-direction: column;
-  }
-}
-
-

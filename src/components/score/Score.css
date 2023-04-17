@@ -23,16 +23,16 @@
     /*color: #104d78;*/
 }
 
-@media only screen and (min-width: 350px) {
+@media only screen and (max-width: 830px) {
     .score-container .number h1 {
-        font-size: 50px;
+        font-size: 90px;
     }
     .score-container .number h2 {
-        font-size: 15px;
+        font-size: 25px;
     }
 }
 
-@media only screen and (min-width: 380px) {
+@media only screen and (max-width: 420px) {
     .score-container .number h1 {
         font-size: 70px;
     }
@@ -41,11 +41,11 @@
     }
 }
 
-@media only screen and (min-width: 760px) {
+@media only screen and (max-width: 380px) {
     .score-container .number h1 {
-        font-size: 90px;
+        font-size: 50px;
     }
     .score-container .number h2 {
-        font-size: 25px;
+        font-size: 15px;
     }
 }
