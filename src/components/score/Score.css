@@ -1,40 +1,51 @@
 .score-container {
-    font-family: Inter,sans-serif;
     display: flex;
-    width: 40%;
-    height: 95%;
-    position: relative;
-    justify-content: center;
-    align-items: center;
+    margin: 0 3vw;
+    font-family: Inter,sans-serif;
 }
 
 .score-container .number {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
     display: flex;
-}
-
-@media only screen and (max-width: 600px) {
-    .score-container .number {
-        flex-direction: column;
-    }
+    flex-direction: column;
 }
 
 .score-container .number h2 {
-    position: absolute;
     margin: 0;
     padding: 0;
-    font-size: 5.5vw;
-    color: #104d78;
+    font-size: 40px;
+    /*color: #104d78;*/
 }
 
 .score-container .number h1 {
-    position: absolute;
     margin: 0;
     padding: 0;
-    font-size: 7vw;
-    color: #104d78;
+    font-size: 90px;
+    /*color: #104d78;*/
+}
+
+@media only screen and (min-width: 350px) {
+    .score-container .number h1 {
+        font-size: 50px;
+    }
+    .score-container .number h2 {
+        font-size: 15px;
+    }
+}
+
+@media only screen and (min-width: 380px) {
+    .score-container .number h1 {
+        font-size: 70px;
+    }
+    .score-container .number h2 {
+        font-size: 20px;
+    }
+}
+
+@media only screen and (min-width: 760px) {
+    .score-container .number h1 {
+        font-size: 90px;
+    }
+    .score-container .number h2 {
+        font-size: 25px;
+    }
 }

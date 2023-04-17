@@ -1,14 +1,15 @@
-import "./Card.css"
+import styles from "./Card.module.css"
 import { CardIcon } from "./CardIcon";
-import cardStore from "../../store/cardStore";
+import cardStore, {Card, CardSide} from "../../store/cardStore";
 import scoreStore from "../../store/scoreStore";
+import cn from 'classnames'
 
 import {observer} from "mobx-react-lite"
 import {useEffect} from "react";
 
 interface CardProps {
-    cardSide: "right" | "left"
-    card: any[];
+    cardSide: CardSide
+    card: Card[];
 }
 
 export const CardCommon = observer(({ cardSide, card }: CardProps) => {
@@ -20,13 +21,13 @@ export const CardCommon = observer(({ cardSide, card }: CardProps) => {
     }, [scoreStore.count])
 
     return (
-        <div className={`cards ${cardSide}-card`}>
+        <div className={cn(styles.cards, styles[`${cardSide}-cards`])}>
 
             { card.map((item) => (
                 <CardIcon
                     key={item.id}
                     image={item.img}
-                    status={cardStore.selectedImages[cardSide] === item.id ? "active" : ""}
+                    isSelected={cardStore.selectedImages[cardSide] === item.id}
                     setStatus={() => {
                         cardStore.setSelected(cardSide, item.id)
                         scoreStore.incrementCount(cardStore.compareImages())

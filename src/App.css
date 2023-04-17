@@ -1,3 +1,11 @@
+:root {
+  --screenSizeSmallPhone: 370px;
+  --screenSizeBigPhone: 420px;
+  --screenSizeTablet: 770px;
+  /*--width: #ffffff;*/
+  /*--height: #ffffff;*/
+}
+
 .app-container {
   height: 100vh;
   width: 100vw;
@@ -11,7 +19,7 @@
   width: 100vw;
 }
 
-.up-footer-container {
+.header-container {
   display: flex;
   justify-content: space-between;
   margin-top: 0.5%;
@@ -21,17 +29,35 @@
 
 .cards-container {
   display: flex;
+  align-items: center;
+  justify-content: space-evenly;
   width: 100%;
   height: 100%;
   background-color: #3A38AE;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (min-width: 350px) {
   .cards-container {
     flex-direction: column;
   }
-  .up-footer-container {
+  .header-container {
     height: 12%;
   }
 }
+
+@media only screen and (min-width: 380px) {
+  .cards-container {
+    flex-direction: column;
+  }
+  .header-container {
+    height: 12%;
+  }
+}
+
+@media only screen and (min-width: 760px) {
+  .cards-container {
+    flex-direction: column;
+  }
+}
+
 
