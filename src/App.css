@@ -1,9 +1,5 @@
 :root {
-  --screenSizeSmallPhone: 370px;
-  --screenSizeBigPhone: 420px;
-  --screenSizeTablet: 770px;
-  /*--width: #ffffff;*/
-  /*--height: #ffffff;*/
+  --font: Inter,sans-serif;
 }
 
 .app-container {

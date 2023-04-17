@@ -17,7 +17,7 @@
 }
 
 .timer-container {
-    font-family: Inter,sans-serif;
+    font-family: var(--font);
     position: absolute;
     width: 170px;
     height: 170px;
