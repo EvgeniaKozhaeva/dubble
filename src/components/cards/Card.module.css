@@ -3,8 +3,8 @@
     flex: none;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    height: 550px;
-    width: 550px;
+    height: 60vmin;
+    width: 60vmin;
     margin: 10px;
     box-shadow: 0 3px 10px #437ca3;
     background-color: white;
@@ -60,23 +60,23 @@
     }
 }
 
-@media only screen and (max-width: 830px) {
+@media only screen and (max-width: 1250px)  {
     .cards {
-        height: 400px;
-        width: 400px;
+        height: 45vmin;
+        width: 45vmin;
     }
 }
 
-@media only screen and (max-width: 420px) {
+@media only screen and (max-width: 700px)  {
     .cards {
-        height: 330px;
-        width: 330px;
+        height: 55vmin;
+        width: 55vmin;
     }
 }
 
-@media only screen and (max-width: 380px) {
+@media only screen and (max-width: 550px)  {
     .cards {
-        height: 250px;
-        width: 250px;
+        height: 70vmin;
+        width: 70vmin;
     }
 }
