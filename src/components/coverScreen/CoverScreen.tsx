@@ -20,21 +20,22 @@ export const CoverScreen = observer(() => {
 })
 
 export const FinishScreen = observer(() => {
-    const winMessage = `YOUR SCORE IS: ${scoreStore.count}`
+    const winMessage = `YOUR SCORE IS: ${scoreStore.count}. Best score is ${localStorage.getItem("bestScore")}`
     const [isVisible, setIsVisible] = useState(false);
     const onClick = () => {
         setIsVisible(false);
-        cardStore.resetSelected()
         timerStore.resetTimer()
         timerStore.startTimer()
         scoreStore.resetCount()
     }
     useEffect(() => {
         if (timerStore.counter === 0) {
+            scoreStore.setBestResult()
             setIsVisible(true);
             cardStore.resetSelected()
         }
     }, [timerStore.counter])
+
     return (
         <div className={`cover-screen visible-${isVisible}`} > {winMessage}
             <button className="new-game-button" onClick={() => onClick()}> New Game </button>

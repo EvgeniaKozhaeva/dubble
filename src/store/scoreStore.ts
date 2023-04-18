@@ -1,5 +1,7 @@
 import {makeAutoObservable} from "mobx";
 
+const keyNameStorage = "bestScore";
+
 class ScoreStore {
 
     count = 0;
@@ -9,10 +11,15 @@ class ScoreStore {
     }
 
     incrementCount(isResultCorrect: boolean | undefined): void {
-        if (isResultCorrect) {
-            ++this.count
-        }
+        isResultCorrect && ++this.count
     }
+
+    setBestResult(): void {
+        const bestResultStorage = localStorage.getItem(keyNameStorage);
+        const bestResult = bestResultStorage !== null ? +bestResultStorage : 0
+        this.count > bestResult && localStorage.setItem(keyNameStorage, JSON.stringify(this.count));
+    }
+
 
     resetCount() {
         this.count = 0

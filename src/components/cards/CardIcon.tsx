@@ -9,7 +9,6 @@ interface CardIconProps {
 }
 
 export const CardIcon = ({ image, isSelected, setStatus, isMatched }: CardIconProps) => {
-    console.log(isSelected, isMatched);
     return (
         <span className={cn({
             [styles.iconSelected]: isSelected,
