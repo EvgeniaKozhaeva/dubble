@@ -8,9 +8,12 @@ import cardStore from "../../store/cardStore";
 
 
 export const CoverScreen = observer(() => {
-    const [isVisible, setIsVisible] = useState(true);
+    const isVisibleLocalStorage = localStorage.getItem("isStartScreenVisible");
+    const [isVisible, setIsVisible] = useState(isVisibleLocalStorage === null ? true : (isVisibleLocalStorage === "true" ? true : false));
+
     const onClick = () => {
         setIsVisible(false);
+        localStorage.setItem("isStartScreenVisible", "false")
         timerStore.startTimer()
         scoreStore.resetCount()
     }
