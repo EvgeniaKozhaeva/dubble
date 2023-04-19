@@ -4,7 +4,8 @@ const keyNameStorage = "bestScore";
 
 class ScoreStore {
 
-    count = 0;
+    countLocalStarage = localStorage.getItem("Score")
+    count = this.countLocalStarage !== null ? +this.countLocalStarage : 0;
 
     constructor() {
         makeAutoObservable(this);
@@ -12,6 +13,7 @@ class ScoreStore {
 
     incrementCount(isResultCorrect: boolean | undefined): void {
         isResultCorrect && ++this.count
+        localStorage.setItem("Score", this.count.toString())
     }
 
     setBestResult(): void {
