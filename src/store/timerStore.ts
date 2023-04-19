@@ -3,19 +3,22 @@ import {makeAutoObservable} from "mobx";
 const SECONDS = 60;
 
 class TimerStore {
-    counter = SECONDS
-    isTimerStarted = false
+    timerLocalStorage = localStorage.getItem("Timer");
+    counter = this.timerLocalStorage !== null ? +this.timerLocalStorage : SECONDS;
+    isTimerStarted = localStorage.getItem("IsTimerStarted") === "true" ? true : false;
 
     constructor() {
         makeAutoObservable(this)
     }
 
     increaseTimer() {
-        this.counter = this.counter - 1
+        this.counter = this.counter - 1;
+        localStorage.setItem("Timer", this.counter.toString());
     }
 
     startTimer() {
         this.isTimerStarted = true
+        localStorage.setItem("IsTimerStarted", this.isTimerStarted ? "true" : "false")
     }
 
     resetTimer() {
