@@ -1,7 +1,9 @@
-import {makeAutoObservable} from "mobx";
+import { makeAutoObservable } from "mobx";
 
 class FinishScreenStore {
+
     isFinishScreenVisibleLocalStorage = localStorage.getItem("isFinishScreenVisible");
+    
     isScreenVisible = this.isFinishScreenVisibleLocalStorage === null ? false : (this.isFinishScreenVisibleLocalStorage === "true");
 
     constructor() {

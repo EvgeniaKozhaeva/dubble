@@ -1,10 +1,11 @@
-import {makeAutoObservable} from "mobx";
+import { makeAutoObservable } from "mobx";
 
 const keyNameStorage = "bestScore";
 
 class ScoreStore {
 
-    countLocalStorage = localStorage.getItem("Score")
+    countLocalStorage = localStorage.getItem("Score");
+
     count = this.countLocalStorage ? +this.countLocalStorage : 0;
 
     constructor() {
@@ -12,8 +13,8 @@ class ScoreStore {
     }
 
     incrementCount(isResultCorrect: boolean | undefined): void {
-        isResultCorrect && ++this.count
-        localStorage.setItem("Score", this.count.toString())
+        isResultCorrect && ++this.count;
+        localStorage.setItem("Score", this.count.toString());
     }
 
     setBestResult(): void {
@@ -22,9 +23,12 @@ class ScoreStore {
         this.count > bestResult && localStorage.setItem(keyNameStorage, this.count.toString());
     }
 
+    getBestResult() {
+        return localStorage.getItem(keyNameStorage);
+    }
 
     resetCount() {
-        this.count = 0
+        this.count = 0;
     }
 }
 

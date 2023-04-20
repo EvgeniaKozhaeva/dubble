@@ -41,9 +41,14 @@ const IMAGES: Card[] = [
     {id: 19, img: emoji_19},
 ];
 
+const defaultSelectedImages = {
+    left: undefined,
+    right: undefined,
+}
+
 export type Card = {
     id: number,
-    img: string
+    img: string,
 }
 
 export type CardSide = "right" | "left";
@@ -51,10 +56,7 @@ export type CardSide = "right" | "left";
 class CardsStore {
     rightCard: Card[] = [];
     leftCard: Card[] = [];
-    selectedImages: Record<CardSide, undefined | number> = {
-        left: undefined,
-        right: undefined,
-    }
+    selectedImages: Record<CardSide, undefined | number> = defaultSelectedImages;
 
     constructor() {
         makeAutoObservable(this)
@@ -79,8 +81,7 @@ class CardsStore {
     }
 
     resetSelected() {
-        this.selectedImages.right = undefined;
-        this.selectedImages.left = undefined;
+        this.selectedImages = defaultSelectedImages;
     }
 
     compareImages(): boolean | undefined {

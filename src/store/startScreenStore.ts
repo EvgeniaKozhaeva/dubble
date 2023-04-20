@@ -1,8 +1,10 @@
-import {makeAutoObservable} from "mobx";
+import { makeAutoObservable } from "mobx";
 
 class StartScreenStore {
+
     isStartScreenVisibleLocalStorage = localStorage.getItem("isStartScreenVisible");
-    isScreenVisible = this.isStartScreenVisibleLocalStorage === null ? true : (this.isStartScreenVisibleLocalStorage === "true")
+
+    isScreenVisible = this.isStartScreenVisibleLocalStorage === null ? true : (this.isStartScreenVisibleLocalStorage === "true");
 
     constructor() {
         makeAutoObservable(this);

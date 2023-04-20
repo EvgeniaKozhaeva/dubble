@@ -21,7 +21,7 @@ export const StartScreen = observer(() => {
 })
 
 export const FinishScreen = observer(() => {
-    const winMessage = `YOUR SCORE IS: ${scoreStore.count}. Best score is ${localStorage.getItem("bestScore")}`
+    const winMessage = `YOUR SCORE IS: ${scoreStore.count}. Best score is ${scoreStore.getBestResult()}`
     const onClick = () => {
         finishScreenStore.setIsScreenVisible(false);
         timerStore.resetTimer();
