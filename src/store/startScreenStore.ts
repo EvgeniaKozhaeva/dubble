@@ -1,8 +1,9 @@
 import { makeAutoObservable } from "mobx";
+import { LocalStorage } from "./constants";
 
 class StartScreenStore {
 
-    isStartScreenVisibleLocalStorage = localStorage.getItem("isStartScreenVisible");
+    isStartScreenVisibleLocalStorage = localStorage.getItem(LocalStorage.IsStartScreenVisible);
 
     isScreenVisible = this.isStartScreenVisibleLocalStorage === null ? true : (this.isStartScreenVisibleLocalStorage === "true");
 
@@ -12,7 +13,7 @@ class StartScreenStore {
 
     setIsScreenVisible(isVisible: boolean): void {
         this.isScreenVisible = isVisible;
-        localStorage.setItem("isStartScreenVisible", isVisible.toString());
+        localStorage.setItem(LocalStorage.IsStartScreenVisible, isVisible.toString());
     }
 }
 
