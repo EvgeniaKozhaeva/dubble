@@ -90,6 +90,4 @@ export class CardsStore {
         }
         return undefined;
     }
-
-
 }

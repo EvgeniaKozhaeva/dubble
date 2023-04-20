@@ -6,3 +6,5 @@ export enum LocalStorage {
     Score = "score",
     IsFinishScreenVisible = "isFinishScreenVisible",
 }
+
+export const TIMER_SECONDS = 60;

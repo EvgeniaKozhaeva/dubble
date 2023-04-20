@@ -28,5 +28,6 @@ export class ScoreStore {
 
     resetCount() {
         this.count = 0;
+        localStorage.setItem(LocalStorage.Score, this.count.toString());
     }
 }

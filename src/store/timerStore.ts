@@ -1,14 +1,12 @@
 import { makeAutoObservable } from "mobx";
-import { LocalStorage } from "./constants"
-
-const SECONDS = 60;
+import { LocalStorage, TIMER_SECONDS } from "./constants"
 
 export class TimerStore {
 
     timerLocalStorage = localStorage.getItem(LocalStorage.Timer);
     isTimerStarted = localStorage.getItem(LocalStorage.IsTimerStarted) === "true";
 
-    counter = this.timerLocalStorage ? +this.timerLocalStorage : SECONDS;
+    counter = this.timerLocalStorage ? +this.timerLocalStorage : TIMER_SECONDS;
 
     constructor() {
         makeAutoObservable(this);
@@ -25,6 +23,7 @@ export class TimerStore {
     }
 
     resetTimer(): void {
-        this.counter = SECONDS;
+        this.counter = TIMER_SECONDS;
+        localStorage.setItem(LocalStorage.Timer, this.counter.toString());
     }
 }
