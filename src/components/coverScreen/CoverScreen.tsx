@@ -2,45 +2,42 @@ import "./CoverScreen.css"
 import "./NewGameButton.css"
 import timerStore from "../../store/timerStore";
 import scoreStore from "../../store/scoreStore";
+import startScreenStore from "../../store/startScreenStore";
+import finishScreenStore from "../../store/finishScreenStore";
 import { observer } from "mobx-react-lite"
-import {useEffect, useState} from "react";
+import { useEffect } from "react";
 import cardStore from "../../store/cardStore";
 
 
-export const CoverScreen = observer(() => {
-    const isVisibleLocalStorage = localStorage.getItem("isStartScreenVisible");
-    const [isVisible, setIsVisible] = useState(isVisibleLocalStorage === null ? true : (isVisibleLocalStorage === "true"));
-
+export const StartScreen = observer(() => {
     const onClick = () => {
-        setIsVisible(false);
-        localStorage.setItem("isStartScreenVisible", "false")
+        startScreenStore.setIsScreenVisible(false);
         timerStore.startTimer()
         scoreStore.resetCount()
     }
     return (
-        <div className={`cover-screen visible-${isVisible}`} onClick={onClick}>CLICK TO START</div>
+        <div className={`cover-screen visible-${startScreenStore.isScreenVisible}`} onClick={onClick}>CLICK TO START</div>
     )
 })
 
 export const FinishScreen = observer(() => {
     const winMessage = `YOUR SCORE IS: ${scoreStore.count}. Best score is ${localStorage.getItem("bestScore")}`
-    const [isVisible, setIsVisible] = useState(false);
     const onClick = () => {
-        setIsVisible(false);
-        timerStore.resetTimer()
-        timerStore.startTimer()
-        scoreStore.resetCount()
+        finishScreenStore.setIsScreenVisible(false);
+        timerStore.resetTimer();
+        timerStore.startTimer();
+        scoreStore.resetCount();
     }
     useEffect(() => {
         if (timerStore.counter === 0) {
             scoreStore.setBestResult()
-            setIsVisible(true);
+            finishScreenStore.setIsScreenVisible(true);
             cardStore.resetSelected()
         }
     }, [timerStore.counter])
 
     return (
-        <div className={`cover-screen visible-${isVisible}`}>{winMessage}
+        <div className={`cover-screen visible-${finishScreenStore.isScreenVisible}`}>{winMessage}
             <button className="new-game-button" onClick={onClick}>New Game</button>
         </div>
     )

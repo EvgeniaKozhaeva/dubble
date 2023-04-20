@@ -5,12 +5,12 @@ import {Score} from "./components/score/Score";
 import {Timer} from "./components/timer/Timer";
 import cardStore from "./store/cardStore"
 import {observer} from "mobx-react-lite"
-import {FinishScreen, CoverScreen} from "./components/coverScreen/CoverScreen";
+import {FinishScreen, StartScreen} from "./components/coverScreen/CoverScreen";
 
 const App = observer(() => {
   return (
     <div className="app-container">
-        <CoverScreen/>
+        <StartScreen/>
         <FinishScreen/>
         <div className="game-container">
             <div className="header-container">
