@@ -4,11 +4,11 @@ const SECONDS = 60;
 
 class TimerStore {
     timerLocalStorage = localStorage.getItem("Timer");
-    counter = this.timerLocalStorage !== null ? +this.timerLocalStorage : SECONDS;
-    isTimerStarted = localStorage.getItem("IsTimerStarted") === "true" ? true : false;
+    counter = this.timerLocalStorage ? +this.timerLocalStorage : SECONDS;
+    isTimerStarted = localStorage.getItem("IsTimerStarted") === "true";
 
     constructor() {
-        makeAutoObservable(this)
+        makeAutoObservable(this);
     }
 
     increaseTimer() {
@@ -17,12 +17,12 @@ class TimerStore {
     }
 
     startTimer() {
-        this.isTimerStarted = true
-        localStorage.setItem("IsTimerStarted", this.isTimerStarted ? "true" : "false")
+        this.isTimerStarted = true;
+        localStorage.setItem("IsTimerStarted", this.isTimerStarted.toString());
     }
 
     resetTimer() {
-        this.counter = SECONDS
+        this.counter = SECONDS;
     }
 }
 

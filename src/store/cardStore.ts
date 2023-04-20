@@ -83,10 +83,11 @@ class CardsStore {
         this.selectedImages.left = undefined;
     }
 
-    compareImages() {
+    compareImages(): boolean | undefined {
         if (this.selectedImages.left && this.selectedImages.right) {
             return this.selectedImages.left === this.selectedImages.right
         }
+        return undefined;
     }
 
 

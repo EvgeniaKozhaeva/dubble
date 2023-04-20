@@ -4,8 +4,8 @@ const keyNameStorage = "bestScore";
 
 class ScoreStore {
 
-    countLocalStarage = localStorage.getItem("Score")
-    count = this.countLocalStarage !== null ? +this.countLocalStarage : 0;
+    countLocalStorage = localStorage.getItem("Score")
+    count = this.countLocalStorage ? +this.countLocalStorage : 0;
 
     constructor() {
         makeAutoObservable(this);
@@ -18,8 +18,8 @@ class ScoreStore {
 
     setBestResult(): void {
         const bestResultStorage = localStorage.getItem(keyNameStorage);
-        const bestResult = bestResultStorage !== null ? +bestResultStorage : 0
-        this.count > bestResult && localStorage.setItem(keyNameStorage, JSON.stringify(this.count));
+        const bestResult = bestResultStorage ? +bestResultStorage : 0
+        this.count > bestResult && localStorage.setItem(keyNameStorage, this.count.toString());
     }
 
 

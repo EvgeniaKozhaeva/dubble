@@ -16,7 +16,7 @@ export const CardIcon = ({ image, isSelected, setStatus, isMatched }: CardIconPr
             [styles.iconNotMatched]: isSelected && isMatched === false,
         })}
               onClick={setStatus} >
-            <img className={styles.image} src={image} alt="alt"/>
+            <img className={styles.image} src={image} alt="alt" />
         </span>
     )
 }

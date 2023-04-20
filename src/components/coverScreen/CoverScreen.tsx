@@ -9,7 +9,7 @@ import cardStore from "../../store/cardStore";
 
 export const CoverScreen = observer(() => {
     const isVisibleLocalStorage = localStorage.getItem("isStartScreenVisible");
-    const [isVisible, setIsVisible] = useState(isVisibleLocalStorage === null ? true : (isVisibleLocalStorage === "true" ? true : false));
+    const [isVisible, setIsVisible] = useState(isVisibleLocalStorage === null ? true : (isVisibleLocalStorage === "true"));
 
     const onClick = () => {
         setIsVisible(false);
@@ -18,7 +18,7 @@ export const CoverScreen = observer(() => {
         scoreStore.resetCount()
     }
     return (
-        <div className={`cover-screen visible-${isVisible}`} onClick={() => onClick()}> CLICK TO START </div>
+        <div className={`cover-screen visible-${isVisible}`} onClick={onClick}>CLICK TO START</div>
     )
 })
 
@@ -40,8 +40,8 @@ export const FinishScreen = observer(() => {
     }, [timerStore.counter])
 
     return (
-        <div className={`cover-screen visible-${isVisible}`} > {winMessage}
-            <button className="new-game-button" onClick={() => onClick()}> New Game </button>
+        <div className={`cover-screen visible-${isVisible}`}>{winMessage}
+            <button className="new-game-button" onClick={onClick}>New Game</button>
         </div>
     )
 })
