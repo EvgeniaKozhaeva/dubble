@@ -1,7 +1,7 @@
 import styles from "./Card.module.css"
 import { CardIcon } from "./CardIcon";
-import cardStore, {Card, CardSide} from "../../store/cardStore";
-import scoreStore from "../../store/scoreStore";
+import { Card, CardSide } from "../../store/cardStore";
+import rootStore from "../../store/rootStore";
 import cn from 'classnames'
 
 import {observer} from "mobx-react-lite"
@@ -15,10 +15,10 @@ interface CardProps {
 export const CardCommon = observer(({ cardSide, card }: CardProps) => {
     useEffect(() => {
         setTimeout(() => {
-            cardStore.resetSelected();
-            cardStore.generateCards()
+            rootStore.cardStore.resetSelected();
+            rootStore.cardStore.generateCards()
         }, 500);
-    }, [scoreStore.count])
+    }, [rootStore.scoreStore.count])
 
     return (
         <div className={cn(styles.cards, styles[`${cardSide}-cards`])}>
@@ -27,12 +27,12 @@ export const CardCommon = observer(({ cardSide, card }: CardProps) => {
                 <CardIcon
                     key={item.id}
                     image={item.img}
-                    isSelected={cardStore.selectedImages[cardSide] === item.id}
+                    isSelected={rootStore.cardStore.selectedImages[cardSide] === item.id}
                     setStatus={() => {
-                        cardStore.setSelected(cardSide, item.id)
-                        scoreStore.incrementCount(cardStore.compareImages())
+                        rootStore.cardStore.setSelected(cardSide, item.id)
+                        rootStore.scoreStore.incrementCount(rootStore.cardStore.compareImages())
                     }}
-                    isMatched={cardStore.compareImages()}
+                    isMatched={rootStore.cardStore.compareImages()}
                 />
             )) }
         </div>

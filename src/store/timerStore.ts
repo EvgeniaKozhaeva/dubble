@@ -3,7 +3,7 @@ import { LocalStorage } from "./constants"
 
 const SECONDS = 60;
 
-class TimerStore {
+export class TimerStore {
 
     timerLocalStorage = localStorage.getItem(LocalStorage.Timer);
     isTimerStarted = localStorage.getItem(LocalStorage.IsTimerStarted) === "true";
@@ -28,5 +28,3 @@ class TimerStore {
         this.counter = SECONDS;
     }
 }
-
-export default new TimerStore();

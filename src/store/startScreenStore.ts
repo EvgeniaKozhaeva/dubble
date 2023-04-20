@@ -1,7 +1,7 @@
 import { makeAutoObservable } from "mobx";
 import { LocalStorage } from "./constants";
 
-class StartScreenStore {
+export class StartScreenStore {
 
     isStartScreenVisibleLocalStorage = localStorage.getItem(LocalStorage.IsStartScreenVisible);
 
@@ -16,5 +16,3 @@ class StartScreenStore {
         localStorage.setItem(LocalStorage.IsStartScreenVisible, isVisible.toString());
     }
 }
-
-export default new StartScreenStore();

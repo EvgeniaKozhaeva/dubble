@@ -1,7 +1,7 @@
 import { makeAutoObservable } from "mobx";
 import { LocalStorage } from "./constants";
 
-class FinishScreenStore {
+export class FinishScreenStore {
 
     isFinishScreenVisibleLocalStorage = localStorage.getItem(LocalStorage.IsFinishScreenVisible);
     
@@ -16,5 +16,3 @@ class FinishScreenStore {
         localStorage.setItem(LocalStorage.IsFinishScreenVisible, isVisible.toString());
     }
 }
-
-export default new FinishScreenStore();

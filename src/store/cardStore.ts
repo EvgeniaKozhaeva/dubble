@@ -53,7 +53,7 @@ export type Card = {
 
 export type CardSide = "right" | "left";
 
-class CardsStore {
+export class CardsStore {
     rightCard: Card[] = [];
     leftCard: Card[] = [];
     selectedImages: Record<CardSide, undefined | number> = defaultSelectedImages;
@@ -93,5 +93,3 @@ class CardsStore {
 
 
 }
-
-export default new CardsStore();

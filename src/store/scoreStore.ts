@@ -1,7 +1,7 @@
 import { makeAutoObservable } from "mobx";
 import { LocalStorage } from "./constants";
 
-class ScoreStore {
+export class ScoreStore {
 
     countLocalStorage = localStorage.getItem(LocalStorage.Score);
 
@@ -30,5 +30,3 @@ class ScoreStore {
         this.count = 0;
     }
 }
-
-export default new ScoreStore();

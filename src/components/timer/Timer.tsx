@@ -1,14 +1,14 @@
 import "./Timer.css"
-import timerStore from "../../store/timerStore";
+import rootStore from "../../store/rootStore";
 import { observer } from "mobx-react-lite"
 import { useEffect } from "react";
 
 export const Timer = observer(() => {
     useEffect(() => {
-        timerStore.isTimerStarted
-        && timerStore.counter > 0
-        && setTimeout(() => timerStore.increaseTimer(), 1000);
-        }, [timerStore.isTimerStarted, timerStore.counter]);
+        rootStore.timerStore.isTimerStarted
+        && rootStore.timerStore.counter > 0
+        && setTimeout(() => rootStore.timerStore.increaseTimer(), 1000);
+        }, [rootStore.timerStore.isTimerStarted, rootStore.timerStore.counter]);
 
     return (
         <div className="base-timer">
@@ -17,7 +17,7 @@ export const Timer = observer(() => {
                     <circle className="base-timer__path-elapsed" cx="50" cy="50" r="45"/>
                 </g>
             </svg>
-            <span className="timer-container"> {timerStore.counter} </span>
+            <span className="timer-container"> {rootStore.timerStore.counter} </span>
         </div>
     )
 })

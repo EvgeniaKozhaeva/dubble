@@ -1,5 +1,5 @@
 import "./Score.css"
-import scoreStore from "../../store/scoreStore";
+import rootStore from "../../store/rootStore";
 import {observer} from "mobx-react-lite"
 
 export const Score = observer(() => {
@@ -7,7 +7,7 @@ export const Score = observer(() => {
         <div className="score-container">
             <div className="number">
                 <h2>Your score is:</h2>
-                <h1>{scoreStore.count}</h1>
+                <h1>{rootStore.scoreStore.count}</h1>
             </div>
         </div>
     )

@@ -1,43 +1,33 @@
 import "./CoverScreen.css"
 import "./NewGameButton.css"
-import timerStore from "../../store/timerStore";
-import scoreStore from "../../store/scoreStore";
-import startScreenStore from "../../store/startScreenStore";
-import finishScreenStore from "../../store/finishScreenStore";
+import rootStore from "../../store/rootStore";
 import { observer } from "mobx-react-lite"
 import { useEffect } from "react";
-import cardStore from "../../store/cardStore";
-
 
 export const StartScreen = observer(() => {
     const onClick = () => {
-        startScreenStore.setIsScreenVisible(false);
-        timerStore.startTimer()
-        scoreStore.resetCount()
+        rootStore.startGameStartScreen();
     }
     return (
-        <div className={`cover-screen visible-${startScreenStore.isScreenVisible}`} onClick={onClick}>CLICK TO START</div>
+        <div className={`cover-screen visible-${rootStore.startScreenStore.isScreenVisible}`} onClick={onClick}>CLICK TO START</div>
     )
 })
 
 export const FinishScreen = observer(() => {
-    const winMessage = `YOUR SCORE IS: ${scoreStore.count}. Best score is ${scoreStore.getBestResult()}`
+    const winMessage = `YOUR SCORE IS: ${rootStore.scoreStore.count}. Best score is ${rootStore.scoreStore.getBestResult()}`
     const onClick = () => {
-        finishScreenStore.setIsScreenVisible(false);
-        timerStore.resetTimer();
-        timerStore.startTimer();
-        scoreStore.resetCount();
+        rootStore.startGameFinishScreen();
     }
     useEffect(() => {
-        if (timerStore.counter === 0) {
-            scoreStore.setBestResult()
-            finishScreenStore.setIsScreenVisible(true);
-            cardStore.resetSelected()
+        if (rootStore.timerStore.counter === 0) {
+            rootStore.scoreStore.setBestResult();
+            rootStore.finishScreenStore.setIsScreenVisible(true);
+            rootStore.cardStore.resetSelected();
         }
-    }, [timerStore.counter])
+    }, [rootStore.timerStore.counter])
 
     return (
-        <div className={`cover-screen visible-${finishScreenStore.isScreenVisible}`}>{winMessage}
+        <div className={`cover-screen visible-${rootStore.finishScreenStore.isScreenVisible}`}>{winMessage}
             <button className="new-game-button" onClick={onClick}>New Game</button>
         </div>
     )

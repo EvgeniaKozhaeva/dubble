@@ -1,11 +1,10 @@
-import React from 'react';
 import './App.css';
 import { CardCommon } from "./components/cards/Card";
-import {Score} from "./components/score/Score";
-import {Timer} from "./components/timer/Timer";
-import cardStore from "./store/cardStore"
-import {observer} from "mobx-react-lite"
-import {FinishScreen, StartScreen} from "./components/coverScreen/CoverScreen";
+import { Score } from "./components/score/Score";
+import { Timer } from "./components/timer/Timer";
+import rootStore from "./store/rootStore";
+import { observer } from "mobx-react-lite"
+import { FinishScreen, StartScreen } from "./components/coverScreen/CoverScreen";
 
 const App = observer(() => {
   return (
@@ -18,8 +17,8 @@ const App = observer(() => {
                 <Timer/>
             </div>
             <div className="cards-container">
-                <CardCommon cardSide={"right"} card={cardStore.rightCard}/>
-                <CardCommon cardSide={"left"} card={cardStore.leftCard}/>
+                <CardCommon cardSide={"right"} card={rootStore.cardStore.rightCard}/>
+                <CardCommon cardSide={"left"} card={rootStore.cardStore.leftCard}/>
             </div>
         </div>
     </div>
