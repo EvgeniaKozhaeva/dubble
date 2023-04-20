@@ -2,7 +2,6 @@ import "./CoverScreen.css"
 import "./NewGameButton.css"
 import rootStore from "../../store/rootStore";
 import { observer } from "mobx-react-lite"
-import { useEffect } from "react";
 
 export const StartScreen = observer(() => {
     const onClick = () => {
@@ -18,13 +17,6 @@ export const FinishScreen = observer(() => {
     const onClick = () => {
         rootStore.startGameFinishScreen();
     }
-    useEffect(() => {
-        if (rootStore.timerStore.counter === 0) {
-            rootStore.scoreStore.setBestResult();
-            rootStore.finishScreenStore.setIsScreenVisible(true);
-            rootStore.cardStore.resetSelected();
-        }
-    }, [rootStore.timerStore.counter])
 
     return (
         <div className={`cover-screen visible-${rootStore.finishScreenStore.isScreenVisible}`}>{winMessage}

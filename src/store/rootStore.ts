@@ -1,4 +1,4 @@
-import { makeAutoObservable } from "mobx";
+import { autorun, makeAutoObservable, reaction } from "mobx";
 
 import { TimerStore } from "./timerStore";
 import { ScoreStore } from "./scoreStore";
@@ -16,6 +16,18 @@ class RootStore {
 
     constructor() {
         makeAutoObservable(this);
+        reaction(() => this.timerStore.counter, () => {
+            if (this.timerStore.counter === 0) {
+                this.scoreStore.setBestResult();
+                this.finishScreenStore.setIsScreenVisible(true);
+                this.cardStore.resetSelected();
+            }
+        });
+        autorun(() => {
+            this.timerStore.isTimerStarted
+            && this.timerStore.counter > 0
+            && setTimeout(() => this.timerStore.increaseTimer(), 1000);
+        });
     }
 
     startGame() {
