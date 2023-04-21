@@ -5,7 +5,6 @@ import rootStore from "../../store/rootStore";
 import cn from 'classnames'
 
 import {observer} from "mobx-react-lite"
-import {useEffect} from "react";
 
 interface CardProps {
     cardSide: CardSide
@@ -13,13 +12,6 @@ interface CardProps {
 }
 
 export const CardCommon = observer(({ cardSide, card }: CardProps) => {
-    useEffect(() => {
-        setTimeout(() => {
-            rootStore.cardStore.resetSelected();
-            rootStore.cardStore.generateCards()
-        }, 500);
-    }, [rootStore.scoreStore.count])
-
     return (
         <div className={cn(styles.cards, styles[`${cardSide}-cards`])}>
 

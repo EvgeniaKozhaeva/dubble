@@ -16,6 +16,7 @@ class RootStore {
 
     constructor() {
         makeAutoObservable(this);
+        this.cardStore.generateCards();
         reaction(() => this.timerStore.counter, () => {
             if (this.timerStore.counter === 0) {
                 this.scoreStore.setBestResult();
@@ -27,6 +28,12 @@ class RootStore {
             this.timerStore.isTimerStarted
             && this.timerStore.counter > 0
             && setTimeout(() => this.timerStore.increaseTimer(), 1000);
+        });
+        reaction(() => this.scoreStore.count, () => {
+            setTimeout(() => {
+                this.cardStore.resetSelected();
+                this.cardStore.generateCards();
+            }, 500);
         });
     }
 
