@@ -1,4 +1,4 @@
-import { makeAutoObservable } from "mobx";
+import { makeAutoObservable, reaction } from "mobx";
 import { LocalStorage } from "./constants";
 
 export class ScoreStore {
@@ -9,11 +9,13 @@ export class ScoreStore {
 
     constructor() {
         makeAutoObservable(this);
+        reaction(() => this.count, () => {
+            localStorage.setItem(LocalStorage.Score, this.count.toString());
+        });
     }
 
     incrementCount(isResultCorrect: boolean | undefined): void {
         isResultCorrect && ++this.count;
-        localStorage.setItem(LocalStorage.Score, this.count.toString());
     }
 
     setBestResult(): void {
@@ -28,6 +30,5 @@ export class ScoreStore {
 
     resetCount() {
         this.count = 0;
-        localStorage.setItem(LocalStorage.Score, this.count.toString());
     }
 }
