@@ -7,9 +7,17 @@ export const StartScreen = observer(() => {
     const onClick = () => {
         rootStore.startGameStartScreen();
     }
-    return (
-        <div className={`cover-screen visible-${rootStore.startScreenStore.isScreenVisible}`} onClick={onClick}>CLICK TO START</div>
-    )
+
+    if (rootStore.startScreenStore.isScreenVisible) {
+        return (
+            <div
+                className={`cover-screen`}
+                onClick={onClick}>CLICK TO START
+            </div>
+        )
+    } else {
+        return null;
+    }
 })
 
 export const FinishScreen = observer(() => {
@@ -18,9 +26,13 @@ export const FinishScreen = observer(() => {
         rootStore.startGameFinishScreen();
     }
 
-    return (
-        <div className={`cover-screen visible-${rootStore.finishScreenStore.isScreenVisible}`}>{winMessage}
-            <button className="new-game-button" onClick={onClick}>New Game</button>
-        </div>
-    )
+    if (rootStore.finishScreenStore.isScreenVisible) {
+        return (
+            <div className={`cover-screen`}>{winMessage}
+                <button className="new-game-button" onClick={onClick}>New Game</button>
+            </div>
+        )
+    } else {
+        return null;
+    }
 })

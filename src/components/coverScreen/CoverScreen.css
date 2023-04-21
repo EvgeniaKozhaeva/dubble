@@ -4,7 +4,6 @@
     right: 0;
     bottom: 0;
     z-index: 100;
-    display: none;
     position: fixed;
     justify-content: center;
     align-items: center;
@@ -12,9 +11,6 @@
     color: #90bfe0;
     font-family: var(--font);
     transition: background-color 500ms, font-size 500ms;
-}
-
-.cover-screen.visible-true {
     display: flex;
     animation: overlay-grow 500ms forwards;
 }
