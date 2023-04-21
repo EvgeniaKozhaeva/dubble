@@ -1,10 +1,10 @@
 import styles from "./Card.module.css"
 import { CardIcon } from "./CardIcon";
-import { Card, CardSide } from "../../store/cardStore";
 import rootStore from "../../store/rootStore";
 import cn from 'classnames'
 
 import {observer} from "mobx-react-lite"
+import { Card, CardSide } from "../../store/types";
 
 interface CardProps {
     cardSide: CardSide
@@ -14,7 +14,6 @@ interface CardProps {
 export const CardCommon = observer(({ cardSide, card }: CardProps) => {
     return (
         <div className={cn(styles.cards, styles[`${cardSide}-cards`])}>
-
             { card.map((item) => (
                 <CardIcon
                     key={item.id}
