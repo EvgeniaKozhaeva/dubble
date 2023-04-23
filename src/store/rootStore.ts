@@ -1,10 +1,10 @@
 import { autorun, makeAutoObservable, reaction } from "mobx";
 
-import { TimerStore } from "./timerStore";
+import { CardsStore } from "./cardStore";
+import { FinishScreenStore } from "./finishScreenStore";
 import { ScoreStore } from "./scoreStore";
 import { StartScreenStore } from "./startScreenStore";
-import { FinishScreenStore } from "./finishScreenStore";
-import { CardsStore } from "./cardStore";
+import { TimerStore } from "./timerStore";
 
 class RootStore {
 

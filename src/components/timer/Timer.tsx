@@ -1,6 +1,6 @@
 import "./Timer.css"
-import rootStore from "../../store/rootStore";
 import { observer } from "mobx-react-lite"
+import rootStore from "../../store/rootStore";
 
 export const Timer = observer(() => {
     return (

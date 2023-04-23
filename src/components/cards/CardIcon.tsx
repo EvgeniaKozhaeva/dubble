@@ -1,5 +1,5 @@
+import cn from "classnames"
 import styles from "./Card.module.css"
-import cn from 'classnames'
 
 interface CardIconProps {
     image: string;

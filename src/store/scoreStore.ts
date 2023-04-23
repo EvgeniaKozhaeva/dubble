@@ -14,8 +14,8 @@ export class ScoreStore {
         });
     }
 
-    incrementCount(isResultCorrect: boolean | undefined): void {
-        isResultCorrect && ++this.count;
+    incrementCount(): void {
+        ++this.count;
     }
 
     setBestResult(): void {

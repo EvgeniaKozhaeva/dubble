@@ -1,9 +1,8 @@
+import cn from "classnames"
+import { observer } from "mobx-react-lite"
 import styles from "./Card.module.css"
 import { CardIcon } from "./CardIcon";
 import rootStore from "../../store/rootStore";
-import cn from 'classnames'
-
-import {observer} from "mobx-react-lite"
 import { Card, CardSide } from "../../store/types";
 
 interface CardProps {
@@ -21,7 +20,7 @@ export const CardCommon = observer(({ cardSide, card }: CardProps) => {
                     isSelected={rootStore.cardStore.selectedImages[cardSide] === item.id}
                     setStatus={() => {
                         rootStore.cardStore.setSelected(cardSide, item.id)
-                        rootStore.scoreStore.incrementCount(rootStore.cardStore.compareImages())
+                        rootStore.cardStore.compareImages() && rootStore.scoreStore.incrementCount()
                     }}
                     isMatched={rootStore.cardStore.compareImages()}
                 />

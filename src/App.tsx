@@ -1,10 +1,11 @@
-import './App.css';
+import "./App.css";
+import { observer } from "mobx-react-lite"
 import { CardCommon } from "./components/cards/Card";
+import { FinishScreen } from "./components/coverScreen/FinishScreen"
+import { StartScreen } from "./components/coverScreen/StartScreen";
 import { Score } from "./components/score/Score";
 import { Timer } from "./components/timer/Timer";
 import rootStore from "./store/rootStore";
-import { observer } from "mobx-react-lite"
-import { FinishScreen, StartScreen } from "./components/coverScreen/CoverScreen";
 
 const App = observer(() => {
   return (
