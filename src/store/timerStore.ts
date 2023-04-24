@@ -3,10 +3,10 @@ import { LocalStorage, TIMER_SECONDS } from "./constants"
 
 export class TimerStore {
 
-    timerLocalStorage = localStorage.getItem(LocalStorage.Timer);
-    isTimerStarted = localStorage.getItem(LocalStorage.IsTimerStarted) === "true";
+    private timerLocalStorage = localStorage.getItem(LocalStorage.Timer);
+    public isTimerStarted = localStorage.getItem(LocalStorage.IsTimerStarted) === "true";
 
-    counter = this.timerLocalStorage ? +this.timerLocalStorage : TIMER_SECONDS;
+    public counter = this.timerLocalStorage ? +this.timerLocalStorage : TIMER_SECONDS;
 
     constructor() {
         makeAutoObservable(this);

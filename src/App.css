@@ -1,5 +1,6 @@
 :root {
   --font: Inter,sans-serif;
+  --imageInRow: 3;
 }
 
 .app-container {

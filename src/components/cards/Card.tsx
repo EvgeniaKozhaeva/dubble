@@ -1,5 +1,6 @@
 import cn from "classnames"
 import { observer } from "mobx-react-lite"
+import React from "react";
 import styles from "./Card.module.css"
 import { CardIcon } from "./CardIcon";
 import rootStore from "../../store/rootStore";
@@ -12,7 +13,7 @@ interface CardProps {
 
 export const CardCommon = observer(({ cardSide, card }: CardProps) => {
     return (
-        <div className={cn(styles.cards, styles[`${cardSide}-cards`])}>
+        <div className={cn(styles.cards, styles[`${cardSide}-cards`])} style={{"--imageInRow": rootStore.cardStore.selectedGameOption.imageInRow} as React.CSSProperties}>
             { card.map((item) => (
                 <CardIcon
                     key={item.id}

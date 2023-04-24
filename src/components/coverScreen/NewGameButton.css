@@ -1,4 +1,4 @@
-.new-game-button {
+.game-button {
     background-color: #90bfe0;
     background-image: linear-gradient(180deg, rgba(255, 255, 255, .15), rgba(255, 255, 255, 0));
     border: 1px solid #90bfe0;
@@ -9,10 +9,10 @@
     cursor: pointer;
     display: inline-block;
     font-family: var(--font);
-    font-size: 1rem;
+    font-size: 2vmax;
     font-weight: 900;
     line-height: 2;
-    margin: 0;
+    margin: 10px;
     padding: .5rem 1rem;
     text-align: center;
     text-transform: none;
@@ -21,27 +21,45 @@
     -webkit-user-select: none;
     touch-action: manipulation;
     vertical-align: middle;
+    height: 10vmax;
+    width: 15vmax;
 }
 
-.new-game-button:focus:not(:focus-visible),
-.new-game-button:focus {
+.game-button:focus:not(:focus-visible),
+.game-button:focus {
     outline: 0;
 }
 
-.new-game-button:hover {
+.game-button:hover {
     background-color: #3733E5;
     border-color: #3733E5;
 }
 
-.new-game-button:focus {
+.game-button:focus {
     background-color: #413FC5;
     border-color: #3E3BBA;
     box-shadow: rgba(255, 255, 255, 0.15) 0 1px 0 inset, rgba(46, 54, 80, 0.075) 0 1px 1px, rgba(104, 101, 235, 0.5) 0 0 0 .2rem;
 }
 
-.new-game-button:active {
+.game-button:active, .active-button {
     background-color: #3E3BBA;
     background-image: none;
     border-color: #3A38AE;
     box-shadow: rgba(46, 54, 80, 0.125) 0 3px 5px inset;
+}
+
+.game-options {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+    height: 20vmax;
+    width: 40vmax;
+    font-size: 2vmax;
+    background-color: rgba(231, 238, 243, 0.62);
+    color: #FFFFFF;
+    border-radius: 1rem;
+    margin: 1px;
+    padding: .5rem 1rem;
 }

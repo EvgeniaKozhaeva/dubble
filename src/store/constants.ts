@@ -5,6 +5,7 @@ export enum LocalStorage {
     BestScore = "bestScore",
     Score = "score",
     IsFinishScreenVisible = "isFinishScreenVisible",
+    SelectedGameOptionId = "selectedGameOption",
 }
 
 export const TIMER_SECONDS = 60;
