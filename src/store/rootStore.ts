@@ -8,18 +8,18 @@ import { TimerStore } from "./timerStore";
 
 class RootStore {
 
-    timerStore = new TimerStore();
-    scoreStore = new ScoreStore();
-    startScreenStore = new StartScreenStore();
-    finishScreenStore = new FinishScreenStore();
-    cardStore = new CardsStore();
+    public timerStore = new TimerStore();
+    public scoreStore = new ScoreStore();
+    public startScreenStore = new StartScreenStore();
+    public finishScreenStore = new FinishScreenStore();
+    public cardStore = new CardsStore();
 
     constructor() {
         makeAutoObservable(this);
         this.cardStore.generateCards();
         reaction(() => this.timerStore.counter, () => {
             if (this.timerStore.counter === 0) {
-                this.scoreStore.setBestResult();
+                this.scoreStore.setBestResult(this.cardStore.selectedGameOption);
                 this.finishScreenStore.setIsScreenVisible(true);
                 this.cardStore.resetSelected();
             }

@@ -8,7 +8,7 @@ export const FinishScreen = observer(() => {
     if (!rootStore.finishScreenStore.isScreenVisible) return null;
 
     const currentScore = `YOUR SCORE IS: ${rootStore.scoreStore.count}`;
-    const bestScore = `BEST SCORE IS: ${rootStore.scoreStore.getBestResult()}`;
+    const bestScore = `BEST SCORE IS: ${rootStore.scoreStore.getBestResult(rootStore.cardStore.selectedGameOption)}`;
     const onClick = () => {
         rootStore.startGameFinishScreen();
     }

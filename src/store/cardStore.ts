@@ -1,12 +1,14 @@
-import {makeAutoObservable, reaction} from "mobx";
-import {LocalStorage} from "./constants";
+import { makeAutoObservable, reaction } from "mobx";
+import { LocalStorage } from "./constants";
 import { Card, CardSide } from "./types";
 import { IMAGES } from "../images";
 
-type GameOption = {
+export type GameOption = {
     id: number,
     imageInRow: number,
     imageAmount: number,
+    bestScore: number,
+    bestResultStorageKey: string,
 }
 
 const defaultSelectedImages = {
@@ -15,8 +17,8 @@ const defaultSelectedImages = {
 };
 
 export const gameOptions: GameOption[] = [
-    {id: 1, imageInRow: 3, imageAmount: 9},
-    {id: 2, imageInRow: 2, imageAmount: 4},
+    {id: 1, imageInRow: 3, imageAmount: 9, bestScore: 0, bestResultStorageKey: LocalStorage.BestScoreNine},
+    {id: 2, imageInRow: 2, imageAmount: 4, bestScore: 0, bestResultStorageKey: LocalStorage.BestScoreFour},
 ];
 
 const defaultGameOption = gameOptions[0];
