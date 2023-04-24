@@ -14,12 +14,14 @@ export const FinishScreen = observer(() => {
     }
     return (
         <div className="cover-screen">
-            <div className="win-message">
-                <h1>{currentScore}</h1>
-                <h2>{bestScore}</h2>
+            <div className="finish-screen-container">
+                <div className="win-message">
+                    <h1>{currentScore}</h1>
+                    <h2>{bestScore}</h2>
+                </div>
+                <button className="game-button" onClick={onClick}>New Game</button>
+                <GameOptionsContainer/>
             </div>
-            <button className="game-button" onClick={onClick}>New Game</button>
-            <GameOptionsContainer/>
         </div>
     )
 })

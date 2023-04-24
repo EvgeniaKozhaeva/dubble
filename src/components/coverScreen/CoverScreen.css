@@ -13,6 +13,22 @@
     animation: overlay-grow 500ms forwards;
 }
 
+.finish-screen-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 1;
+    height: 80%;
+    width: 60%;
+    font-size: 2vmax;
+    background-color: rgb(231, 238, 243);
+    color: #ffffff00;
+    border-radius: 1rem;
+    margin: 1px;
+    padding: .5rem 1rem;
+}
+
 .win-message {
     display: flex;
     flex-direction: column;

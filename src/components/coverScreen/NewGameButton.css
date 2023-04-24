@@ -21,8 +21,8 @@
     -webkit-user-select: none;
     touch-action: manipulation;
     vertical-align: middle;
-    height: 10vmax;
-    width: 15vmax;
+    height: 8vmax;
+    width: 20vmax;
 }
 
 .game-button:focus:not(:focus-visible),
@@ -54,12 +54,14 @@
     justify-content: space-between;
     align-items: center;
     z-index: 1;
-    height: 20vmax;
-    width: 40vmax;
+    /* height: 20vmax;
+    width: 40vmax; */
     font-size: 2vmax;
-    background-color: rgba(231, 238, 243, 0.62);
-    color: #FFFFFF;
-    border-radius: 1rem;
-    margin: 1px;
-    padding: .5rem 1rem;
+    color: #060505;
+    font-family: var(--font);
 }
+ .game-options button {
+    max-height: 80px;
+    max-width: 130px;
+
+ }
