@@ -1,42 +1,59 @@
-import emoji_1 from "./emoji_1.png"
-import emoji_10 from "./emoji_10.png"
-import emoji_11 from "./emoji_11.png"
-import emoji_12 from "./emoji_12.png"
-import emoji_13 from "./emoji_13.png"
-import emoji_14 from "./emoji_14.png"
-import emoji_15 from "./emoji_15.png"
-import emoji_16 from "./emoji_16.png"
-import emoji_17 from "./emoji_17.png"
-import emoji_18 from "./emoji_18.png"
-import emoji_19 from "./emoji_19.png"
-import emoji_2 from "./emoji_2.png"
-import emoji_3 from "./emoji_3.png"
-import emoji_4 from "./emoji_4.png"
-import emoji_5 from "./emoji_5.png"
-import emoji_6 from "./emoji_6.png"
-import emoji_7 from "./emoji_7.png"
-import emoji_8 from "./emoji_8.png"
-import emoji_9 from "./emoji_9.png"
+import sketch_1 from "./sketch_1.png";
+import sketch_10 from "./sketch_10.png";
+import sketch_11 from "./sketch_11.png";
+import sketch_12 from "./sketch_12.png";
+import sketch_13 from "./sketch_13.png";
+import sketch_14 from "./sketch_14.png";
+import sketch_15 from "./sketch_15.png";
+import sketch_16 from "./sketch_16.png";
+import sketch_17 from "./sketch_17.png";
+import sketch_18 from "./sketch_18.png";
+import sketch_19 from "./sketch_19.png";
+import sketch_2 from "./sketch_2.png";
+import sketch_20 from "./sketch_20.png";
+import sketch_21 from "./sketch_21.png";
+import sketch_22 from "./sketch_22.png";
+import sketch_23 from "./sketch_23.png";
+import sketch_24 from "./sketch_24.png";
+import sketch_25 from "./sketch_25.png";
+import sketch_26 from "./sketch_26.png";
+import sketch_27 from "./sketch_27.png";
+import sketch_3 from "./sketch_3.png";
+import sketch_4 from "./sketch_4.png";
+import sketch_5 from "./sketch_5.png";
+import sketch_6 from "./sketch_6.png";
+import sketch_7 from "./sketch_7.png";
+import sketch_8 from "./sketch_8.png";
+import sketch_9 from "./sketch_9.png";
+
 import { Card } from "../store/types";
 
 export const IMAGES: Card[] = [
-    {id: 1, img: emoji_1},
-    {id: 2, img: emoji_2},
-    {id: 3, img: emoji_3},
-    {id: 4, img: emoji_4},
-    {id: 5, img: emoji_5},
-    {id: 6, img: emoji_6},
-    {id: 7, img: emoji_7},
-    {id: 8, img: emoji_8},
-    {id: 9, img: emoji_9},
-    {id: 10, img: emoji_10},
-    {id: 11, img: emoji_11},
-    {id: 12, img: emoji_12},
-    {id: 13, img: emoji_13},
-    {id: 14, img: emoji_14},
-    {id: 15, img: emoji_15},
-    {id: 16, img: emoji_16},
-    {id: 17, img: emoji_17},
-    {id: 18, img: emoji_18},
-    {id: 19, img: emoji_19},
-];
+    {id: 1, img: sketch_1},
+    {id: 2, img: sketch_2},
+    {id: 3, img: sketch_3},
+    {id: 4, img: sketch_4},
+    {id: 5, img: sketch_5},
+    {id: 6, img: sketch_6},
+    {id: 7, img: sketch_7},
+    {id: 8, img: sketch_8},
+    {id: 9, img: sketch_9},
+    {id: 10, img: sketch_10},
+    {id: 11, img: sketch_11},
+    {id: 12, img: sketch_12},
+    {id: 13, img: sketch_13},
+    {id: 14, img: sketch_14},
+    {id: 15, img: sketch_15},
+    {id: 16, img: sketch_16},
+    {id: 17, img: sketch_17},
+    {id: 18, img: sketch_18},
+    {id: 19, img: sketch_19},
+    {id: 20, img: sketch_20},
+    {id: 21, img: sketch_21},
+    {id: 22, img: sketch_22},
+    {id: 23, img: sketch_23},
+    {id: 24, img: sketch_24},
+    {id: 25, img: sketch_25},
+    {id: 26, img: sketch_26},
+    {id: 27, img: sketch_27},
+]
