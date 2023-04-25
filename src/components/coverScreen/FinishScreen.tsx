@@ -2,6 +2,7 @@ import "./CoverScreen.css"
 import "./NewGameButton.css"
 import { observer } from "mobx-react-lite";
 import { GameOptionsContainer } from "./GameOptionsContainer";
+import { NewGameButton } from "./NewGameButton";
 import rootStore from "../../store/rootStore";
 
 export const FinishScreen = observer(() => {
@@ -14,12 +15,12 @@ export const FinishScreen = observer(() => {
     }
     return (
         <div className="cover-screen">
-            <div className="finish-screen-container">
+            <div className="setting-screen">
                 <div className="win-message">
                     <h1>{currentScore}</h1>
                     <h2>{bestScore}</h2>
                 </div>
-                <button className="game-button" onClick={onClick}>New Game</button>
+                <NewGameButton handleClick={onClick}/>
                 <GameOptionsContainer/>
             </div>
         </div>

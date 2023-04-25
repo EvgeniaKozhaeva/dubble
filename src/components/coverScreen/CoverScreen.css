@@ -13,7 +13,7 @@
     animation: overlay-grow 500ms forwards;
 }
 
-.finish-screen-container {
+.setting-screen {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
