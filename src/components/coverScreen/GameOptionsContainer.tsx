@@ -7,7 +7,7 @@ export const GameOptionsContainer = observer(() => {
     const gameOption = (option: number) => `${option}X${option}`;
     return (
         <div className="game-options">
-            <span>Please select difficulty level</span>
+            <span>Please select a difficulty</span>
             { gameOptions.map((option) => (
                 <button
                     className={rootStore.cardStore.selectedGameOption.id === option.id ? "game-button active-button" : "game-button"}
