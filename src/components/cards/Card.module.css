@@ -1,19 +1,22 @@
 .cards {
+    border-radius: 1rem;
     display: grid;
+    align-items: center;
+    justify-items: center;
     flex: none;
     grid-template-columns: repeat(var(--imageInRow), 1fr);
     grid-template-rows: repeat(var(--imageInRow), 1fr);
     height: 60vmin;
     width: 60vmin;
-    margin: 10px;
     box-shadow: 0 3px 10px #437ca3;
     background-color: white;
 }
 
 .iconSelected {
-    background-color: #c275e0;
-    box-shadow: 0 5px 10px #7a259c;
-    border: solid 3px #7a259c;
+    border: solid 2px #7a259c;
+    border-radius: 1rem;
+    width: 90%;
+    height: 90%;
 }
 
 .iconNotMatched {
@@ -31,7 +34,7 @@
     height: 95%;
     display: flex;
     justify-content: center;
-    justify-self: center;
+    border-radius: 1rem;
 }
 
 @keyframes shake {
