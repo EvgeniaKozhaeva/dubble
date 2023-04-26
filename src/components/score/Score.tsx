@@ -1,4 +1,4 @@
-import "./Score.css"
+import "../../Circle.css"
 import {observer} from "mobx-react-lite"
 import rootStore from "../../store/rootStore";
 
