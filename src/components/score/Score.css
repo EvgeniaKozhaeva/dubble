@@ -13,14 +13,12 @@
     margin: 0;
     padding: 0;
     font-size: 40px;
-    /*color: #104d78;*/
 }
 
 .score-container .number h1 {
     margin: 0;
     padding: 0;
     font-size: 90px;
-    /*color: #104d78;*/
 }
 
 @media only screen and (max-width: 830px) {

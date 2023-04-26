@@ -79,7 +79,7 @@
 
 @media only screen and (max-width: 550px)  {
     .cards {
-        height: 70vmin;
-        width: 70vmin;
+        height: 65vmin;
+        width: 65vmin;
     }
 }

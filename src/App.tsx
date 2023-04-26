@@ -13,6 +13,7 @@ const App = observer(() => {
         <StartScreen/>
         <FinishScreen/>
         <div className="game-container">
+            <div className="game-title-container">DOUBLE</div>
             <div className="header-container">
                 <Score/>
                 <Timer/>

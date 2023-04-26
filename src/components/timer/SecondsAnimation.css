@@ -1,0 +1,96 @@
+.timer {
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+
+}
+
+.timer:after {
+    border-radius: 50%;
+    content: "";
+    display: block;
+    position: absolute;
+}
+
+.timer .hand {
+    float: left;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    width: 50%;
+}
+
+.timer .hand span {
+    border: calc(50px * var(--timerSize)) solid rgba(0, 255, 255, 0.4);
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    border-radius: 50%;
+    display: block;
+    height: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: rotate(225deg);
+    width: 0;
+}
+
+.timer .hand:first-child {
+    transform: rotate(180deg);
+}
+
+.timer .hand .animation-true {
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.timer .hand:first-child .animation-true {
+    animation-name: spin1;
+}
+
+.timer .hand:last-child .animation-true {
+    animation-name: spin2;
+}
+
+.timer.second {
+    height: calc(300px * var(--timerSize));
+    width: calc(300px * var(--timerSize));
+}
+
+.timer.second .hand span {
+    border-top-color: rgba(245, 246, 246, 0.43);
+    border-right-color: rgba(245, 246, 246, 0.43);
+    border-width: calc(150px * var(--timerSize));
+}
+
+.timer.second .hand .animation-true {
+    animation-duration: 1s;
+}
+
+.timer.second:after {
+    height: calc(296px * var(--timerSize));
+    width: calc(296px * var(--timerSize));
+}
+
+@keyframes spin1 {
+    0% {
+        transform: rotate(225deg);
+    }
+    50% {
+        transform: rotate(225deg);
+    }
+    100% {
+        transform: rotate(405deg);
+    }
+}
+
+@keyframes spin2 {
+    0% {
+        transform: rotate(225deg);
+    }
+    50% {
+        transform: rotate(405deg);
+    }
+    100% {
+        transform: rotate(405deg);
+    }
+}
