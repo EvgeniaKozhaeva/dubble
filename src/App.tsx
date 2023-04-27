@@ -6,6 +6,7 @@ import { LandscapeScreen } from "./components/coverScreen/LandscapeScreen";
 import { StartScreen } from "./components/coverScreen/StartScreen";
 import { Score } from "./components/score/Score";
 import { Timer } from "./components/timer/Timer";
+import logo from "./images/logo_dobble.png"
 import rootStore from "./store/rootStore";
 
 const App = observer(() => {
@@ -16,7 +17,7 @@ const App = observer(() => {
         <FinishScreen/>
         <div className="game-container">
             <div className="game-title-container">
-                <div className="game-title">DOUBLE</div>
+                <img className="game-title" src={logo}/>
             </div>
             <div className="header-container">
                 <Score/>
