@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/dubble/static/css/main.3f03383a.css",
-    "main.js": "/dubble/static/js/main.42ace453.js",
+    "main.css": "/dubble/static/css/main.4fb6d086.css",
+    "main.js": "/dubble/static/js/main.04224bae.js",
     "static/media/sketch_4.png": "/dubble/static/media/sketch_4.d61b1ed443d19159e1e0.png",
     "static/media/sketch_3.png": "/dubble/static/media/sketch_3.a9c0596ec124774e7ed4.png",
     "static/media/sketch_27.png": "/dubble/static/media/sketch_27.4b7f4cfba46b7c42e01e.png",
@@ -16,6 +16,7 @@
     "static/media/sketch_19.png": "/dubble/static/media/sketch_19.5049430a6ece275ac60c.png",
     "static/media/sketch_17.png": "/dubble/static/media/sketch_17.549d963da7be5bb9c703.png",
     "static/media/sketch_26.png": "/dubble/static/media/sketch_26.112ad790582ecd626c2b.png",
+    "static/media/logo_dobble.png": "/dubble/static/media/logo_dobble.97d08fa8656650a0e1fe.png",
     "static/media/sketch_16.png": "/dubble/static/media/sketch_16.98360c07239f1be7db82.png",
     "static/media/sketch_22.png": "/dubble/static/media/sketch_22.4af62f867d3a44e03d2d.png",
     "static/media/sketch_18.png": "/dubble/static/media/sketch_18.b24a3901ceeaba671c17.png",
@@ -30,11 +31,11 @@
     "static/media/sketch_9.png": "/dubble/static/media/sketch_9.8a3f80f622932923246b.png",
     "static/media/sketch_8.png": "/dubble/static/media/sketch_8.df59062cb3977de8ba65.png",
     "index.html": "/dubble/index.html",
-    "main.3f03383a.css.map": "/dubble/static/css/main.3f03383a.css.map",
-    "main.42ace453.js.map": "/dubble/static/js/main.42ace453.js.map"
+    "main.4fb6d086.css.map": "/dubble/static/css/main.4fb6d086.css.map",
+    "main.04224bae.js.map": "/dubble/static/js/main.04224bae.js.map"
   },
   "entrypoints": [
-    "static/css/main.3f03383a.css",
-    "static/js/main.42ace453.js"
+    "static/css/main.4fb6d086.css",
+    "static/js/main.04224bae.js"
   ]
 }
