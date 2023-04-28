@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/dubble/static/css/main.4fb6d086.css",
-    "main.js": "/dubble/static/js/main.04224bae.js",
+    "main.css": "/dubble/static/css/main.3cf35dc0.css",
+    "main.js": "/dubble/static/js/main.6f852be8.js",
     "static/media/sketch_4.png": "/dubble/static/media/sketch_4.d61b1ed443d19159e1e0.png",
     "static/media/sketch_3.png": "/dubble/static/media/sketch_3.a9c0596ec124774e7ed4.png",
     "static/media/sketch_27.png": "/dubble/static/media/sketch_27.4b7f4cfba46b7c42e01e.png",
@@ -31,11 +31,11 @@
     "static/media/sketch_9.png": "/dubble/static/media/sketch_9.8a3f80f622932923246b.png",
     "static/media/sketch_8.png": "/dubble/static/media/sketch_8.df59062cb3977de8ba65.png",
     "index.html": "/dubble/index.html",
-    "main.4fb6d086.css.map": "/dubble/static/css/main.4fb6d086.css.map",
-    "main.04224bae.js.map": "/dubble/static/js/main.04224bae.js.map"
+    "main.3cf35dc0.css.map": "/dubble/static/css/main.3cf35dc0.css.map",
+    "main.6f852be8.js.map": "/dubble/static/js/main.6f852be8.js.map"
   },
   "entrypoints": [
-    "static/css/main.4fb6d086.css",
-    "static/js/main.04224bae.js"
+    "static/css/main.3cf35dc0.css",
+    "static/js/main.6f852be8.js"
   ]
 }
