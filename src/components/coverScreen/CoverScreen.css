@@ -54,7 +54,7 @@
 }
 
 
-@media only screen and (max-device-height: 700px) and (orientation: landscape) {
+@media only screen and (max-height: 700px) and (orientation: landscape) {
     .landscape-screen {
         display: flex;
         z-index: 150;

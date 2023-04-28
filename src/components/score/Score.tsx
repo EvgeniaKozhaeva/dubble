@@ -1,16 +1,16 @@
-import "../../Circle.css"
-import {observer} from "mobx-react-lite"
+import { observer } from "mobx-react-lite"
+import React from "react";
 import rootStore from "../../store/rootStore";
+import { Circle } from "../circle/Circle";
 
 export const Score = observer(() => {
     return (
-        <div className="base-circle">
-            <svg className="base-circle-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                <g className="inner-circle">
-                    <circle className="outer-circle" cx="50" cy="50" r="45"/>
-                </g>
-            </svg>
-            <span className="count-container"> {rootStore.scoreStore.count} </span>
+        <div className="circle-container">
+            <div className="circle-title">SCORE</div>
+            <div className="base-circle">
+                <Circle/>
+                <span className="count-container"> {rootStore.scoreStore.count} </span>
+            </div>
         </div>
     )
 })

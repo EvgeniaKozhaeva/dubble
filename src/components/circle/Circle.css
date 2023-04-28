@@ -42,6 +42,18 @@
     }
 }
 
+.circle-container {
+    display: flex;
+    align-items: center;
+}
+
+.circle-title {
+    margin: 0 25px;
+    font-size: 25px;
+    font-weight: bolder;
+    color: #ffffff;
+}
+
 @media only screen and (max-width: 420px) {
     :root {
         --timerSize: 0.27;
@@ -54,6 +66,10 @@
     .base-circle {
         width: 100px;
         height: 100px;
+    }
+    .circle-title {
+        margin: 0 15px;
+        font-size: 15px;
     }
 }
 
@@ -69,5 +85,9 @@
     .base-circle {
         width: 73px;
         height: 73px;
+    }
+    .circle-title {
+        margin: 0 10px;
+        font-size: 10px;
     }
 }
